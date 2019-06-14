@@ -1,7 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/PlayerAnimation.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GFX/Background/bg_layer1.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Background/bg_layer2.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Background/bg_layer3.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Background/bg_layer4.png" type="Texture" id=6]
+[ext_resource path="res://SFX/jump1.ogg" type="AudioStream" id=7]
+[ext_resource path="res://SFX/pain.ogg" type="AudioStream" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 60.0
@@ -9,7 +15,7 @@ height = 86.0
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 481.878, 256.318 )
-collision_mask = 2
+collision_mask = 14
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -20,10 +26,70 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="PlayerAnimation" parent="." instance=ExtResource( 2 )]
-frame = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
+editor/display_folded = true
+position = Vector2( 100, 0 )
 current = true
 zoom = Vector2( 2, 2 )
 limit_left = 0
+limit_smoothed = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D"]
+editor/display_folded = true
+scroll_base_offset = Vector2( 0, -1000 )
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+editor/display_folded = true
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+editor/display_folded = true
+motion_scale = Vector2( 0.25, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer2"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+editor/display_folded = true
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer3"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+editor/display_folded = true
+motion_scale = Vector2( 0.75, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer4"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
+
+[node name="SFX" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Jump" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 7 )
+volume_db = -8.0
+
+[node name="Pain" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 8 )
+volume_db = -5.0
 [connection signal="animate" from="." to="PlayerAnimation" method="_on_Player_animate"]
