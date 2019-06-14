@@ -12,6 +12,10 @@ const GUI_GROUP: String = "GUI"
 const UPDATE_LIVES_METHOD: String = "update_lives"
 const UPDATE_COINS_METHOD: String = "update_coins"
 
+# Scenes
+const GAME_OVER_SCENE: String = "res://Scenes/GameOver.tscn"
+const VICTORY_SCENE: String = "res://Scenes/Victory.tscn"
+
 func _ready():
 	add_to_group(GAME_STATE_GROUP)
 	update_GUI()
@@ -49,4 +53,9 @@ func life_up() -> void:
 
 func end_game() -> void:
 	yield(get_tree().create_timer(0.3), "timeout")
-	get_tree().change_scene("res://Scenes/GameOver.tscn")
+	get_tree().change_scene(GAME_OVER_SCENE)
+
+
+func win_game() -> void:
+	yield(get_tree().create_timer(0.1), "timeout")
+	get_tree().change_scene(VICTORY_SCENE)	
