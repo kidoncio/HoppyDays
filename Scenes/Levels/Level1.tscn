@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Levels/GameState.gd" type="Script" id=1]
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=2]
@@ -9,7 +9,8 @@
 [ext_resource path="res://Items/Coin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Enemies/Spikeman.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemies/Cloud.tscn" type="PackedScene" id=9]
-[ext_resource path="res://SFX/Summer_Park.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Items/Portal.tscn" type="PackedScene" id=10]
+[ext_resource path="res://SFX/Summer_Park.ogg" type="AudioStream" id=11]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
@@ -103,6 +104,7 @@ position = Vector2( 3333.46, 907.998 )
 position = Vector2( 3268.03, 1115.61 )
 
 [node name="Enemies" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Spikemans" type="Node" parent="Enemies"]
 
@@ -120,7 +122,12 @@ position = Vector2( 4993.83, 778.553 )
 [node name="Cloud3" parent="Enemies/Clouds" instance=ExtResource( 9 )]
 position = Vector2( 2768.89, 870.427 )
 
+[node name="Portal" type="Node" parent="."]
+
+[node name="Portal" parent="Portal" instance=ExtResource( 10 )]
+position = Vector2( 6315.25, 722.829 )
+
 [node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
+stream = ExtResource( 11 )
 volume_db = -5.0
 autoplay = true
