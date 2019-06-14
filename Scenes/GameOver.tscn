@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Background/bg_layer1.png" type="Texture" id=2]
@@ -7,12 +7,20 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
-outline_color = Color( 0.788235, 0.14902, 0.14902, 1 )
+outline_size = 4
 use_filter = true
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 size = 64
+outline_size = 4
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+outline_size = 4
+use_filter = true
 font_data = ExtResource( 3 )
 
 [node name="GameOver" type="Control"]
@@ -32,9 +40,10 @@ anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 125.0
-margin_top = 175.0
+margin_top = 100.0
 margin_right = 898.0
-margin_bottom = 425.0
+margin_bottom = 500.0
+custom_constants/separation = 30
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_right = 773.0
@@ -44,22 +53,44 @@ custom_colors/font_color = Color( 0.788235, 0.14902, 0.14902, 1 )
 text = "Game Over!"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
-margin_top = 168.0
+margin_top = 194.0
 margin_right = 773.0
-margin_bottom = 250.0
+margin_bottom = 282.0
+custom_constants/separation = 25
 alignment = 1
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 176.0
-margin_right = 540.0
-margin_bottom = 82.0
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.788235, 0.14902, 0.14902, 1 )
-text = "Try Again!"
-
-[node name="RestartButton" type="TextureButton" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 544.0
-margin_right = 596.0
-margin_bottom = 82.0
+[node name="BunnyButton" type="TextureButton" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 160.0
+margin_right = 212.0
+margin_bottom = 88.0
 texture_normal = ExtResource( 4 )
+
+[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 237.0
+margin_right = 613.0
+margin_bottom = 88.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.788235, 0.14902, 0.14902, 1 )
+custom_colors/font_color_hover = Color( 0.72549, 0.294118, 0.294118, 1 )
+custom_colors/font_color_pressed = Color( 0.72549, 0.294118, 0.294118, 1 )
+text = "Try Again!"
+flat = true
+
+[node name="MenuButton" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_left = 150.0
+margin_top = 312.0
+margin_right = 622.0
+margin_bottom = 400.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.788235, 0.14902, 0.14902, 1 )
+custom_colors/font_color_hover = Color( 0.72549, 0.294118, 0.294118, 1 )
+custom_colors/font_color_pressed = Color( 0.72549, 0.294118, 0.294118, 1 )
+text = "Back to Menu"
+flat = true
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/BunnyButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MenuButton" to="." method="_on_MenuButton_pressed"]
