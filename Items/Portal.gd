@@ -7,4 +7,5 @@ const GAME_STATE_GROUP: String = "GameState"
 const WIN_GAME_METHOD: String = "win_game"
 
 func _on_Area2D_body_entered(body):
-	get_tree().call_group(GAME_STATE_GROUP, WIN_GAME_METHOD)
+	if body is KinematicBody2D:
+		get_tree().call_group(GAME_STATE_GROUP, WIN_GAME_METHOD)

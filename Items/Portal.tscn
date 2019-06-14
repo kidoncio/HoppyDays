@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Items/Portal.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Items/portal_yellow.png" type="Texture" id=2]
@@ -25,7 +25,10 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.25, 1 ) ]
 }
 
+[sub_resource type="CanvasItemMaterial" id=4]
+
 [sub_resource type="ParticlesMaterial" id=3]
+next_pass = SubResource( 4 )
 emission_shape = 1
 emission_sphere_radius = 130.0
 flag_disable_z = true
