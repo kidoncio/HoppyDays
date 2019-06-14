@@ -65,15 +65,16 @@ tracks/2/keys = {
 }
 
 [node name="Spikeman" type="Node2D"]
+editor/display_folded = true
 
 [node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
 collision_layer = 4
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D"]
 frames = SubResource( 1 )
 animation = "walk"
-frame = 1
 playing = true
 flip_h = true
 
