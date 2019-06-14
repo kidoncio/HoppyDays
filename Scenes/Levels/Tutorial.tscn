@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Levels/GameState.gd" type="Script" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Levels/Tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://Items/Portal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SFX/Chiptune_Adventures_1.ogg" type="AudioStream" id=5]
+
+[node name="Tutorial" type="Node2D"]
+editor/display_folded = true
+position = Vector2( 33.9996, -120.544 )
+script = ExtResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+format = 1
+tile_data = PoolIntArray( 393221, 2, 0, 393227, 2, 0, 393233, 2, 0, 393244, 2, 0, 393254, 3, 0, 393260, 2, 0 )
+
+[node name="Portals" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Portal" parent="Portals" instance=ExtResource( 4 )]
+position = Vector2( 3030.06, 135.087 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -5.0
+autoplay = true
