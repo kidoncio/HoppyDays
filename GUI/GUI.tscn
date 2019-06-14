@@ -7,7 +7,7 @@
 [ext_resource path="res://GFX/HUD/lifes.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
-size = 46
+size = 50
 outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
@@ -23,50 +23,59 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
+editor/display_folded = true
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -343.708
 margin_top = 48.8836
 margin_right = -75.4204
 margin_bottom = 107.884
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource( 2 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/TextureRect"]
-anchor_top = 0.5
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/TextureRect"]
 anchor_right = 1.0
-anchor_bottom = 0.5
-margin_top = -60.5
-margin_bottom = 60.5
+anchor_bottom = 1.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 0
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/TextureRect/VBoxContainer"]
-margin_right = 268.0
-margin_bottom = 121.0
-alignment = 1
-
-[node name="CoinCount" type="Label" parent="Control/TextureRect/VBoxContainer/HBoxContainer"]
-margin_top = 20.0
-margin_right = 72.0
-margin_bottom = 141.0
-size_flags_horizontal = 3
+[node name="CoinCount" type="Label" parent="Control/TextureRect/HBoxContainer"]
+margin_left = 17.0
+margin_right = 50.0
+margin_bottom = 131.0
+size_flags_horizontal = 6
+size_flags_vertical = 0
 custom_fonts/font = SubResource( 1 )
 text = "0
 "
 align = 1
 valign = 1
 
-[node name="CoinIcon" type="TextureRect" parent="Control/TextureRect/VBoxContainer/HBoxContainer"]
-margin_left = 76.0
-margin_right = 136.0
-margin_bottom = 121.0
+[node name="CoinIcon" type="TextureRect" parent="Control/TextureRect/HBoxContainer"]
+margin_left = 70.0
+margin_right = 130.0
+margin_bottom = 61.0
+size_flags_horizontal = 6
+size_flags_vertical = 0
 texture = ExtResource( 4 )
 
-[node name="LifeCount" type="Label" parent="Control/TextureRect/VBoxContainer/HBoxContainer"]
-margin_left = 140.0
-margin_top = 20.0
-margin_right = 212.0
-margin_bottom = 141.0
-size_flags_horizontal = 3
+[node name="LifeIcon" type="TextureRect" parent="Control/TextureRect/HBoxContainer"]
+margin_left = 141.0
+margin_right = 193.0
+margin_bottom = 71.0
+size_flags_horizontal = 6
+size_flags_vertical = 0
+texture = ExtResource( 5 )
+
+[node name="LifeCount" type="Label" parent="Control/TextureRect/HBoxContainer"]
+margin_left = 201.0
+margin_right = 268.0
+margin_bottom = 131.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
 custom_fonts/font = SubResource( 1 )
 text = "0
 "
@@ -74,8 +83,31 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="LifeIcon" type="TextureRect" parent="Control/TextureRect/VBoxContainer/HBoxContainer"]
-margin_left = 216.0
-margin_right = 268.0
-margin_bottom = 121.0
-texture = ExtResource( 5 )
+[node name="MenuButton" type="TextureButton" parent="Control"]
+anchor_left = 0.045
+anchor_top = 0.043
+anchor_right = 0.104
+anchor_bottom = 0.145
+margin_left = 0.172836
+margin_top = 0.0471668
+margin_right = -0.243164
+margin_bottom = -0.15284
+texture_normal = ExtResource( 4 )
+
+[node name="QuitDialog" type="ConfirmationDialog" parent="Control"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -35.0
+margin_right = 100.0
+margin_bottom = 35.0
+popup_exclusive = true
+window_title = "Quit"
+dialog_text = "Do you really want to quit?"
+[connection signal="pressed" from="Control/MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="confirmed" from="Control/QuitDialog" to="." method="_on_QuitDialog_confirmed"]
+[connection signal="modal_closed" from="Control/QuitDialog" to="." method="_on_QuitDialog_modal_closed"]
+[connection signal="mouse_exited" from="Control/QuitDialog" to="." method="_on_QuitDialog_mouse_exited"]
