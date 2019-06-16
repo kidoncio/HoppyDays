@@ -1,11 +1,11 @@
 extends CanvasLayer
 
-var configuration: Dictionary = {
-	"sound": true
-}
+# Configuration Service
+onready var _configuration_service = preload("res://Scenes/ConfigurationService.gd").new()
+onready var configuration: Dictionary = _configuration_service.get_configuration()
 
-# Files Path
-const CONFIGURATION_FILE_PATH: String = "res://Configuration/Configuration.json"
+# Nodes
+const GAME_STATE_NODE: String = "res://Scenes/Levels/GameState.gd"
 
 # Groups
 const GAME_STATE_GROUP: String = "GameState"
@@ -14,7 +14,6 @@ const GAME_STATE_GROUP: String = "GameState"
 const RESTART_LEVEL_METHOD: String = "restart_level"
 
 func _ready():
-	var configuration = get_from_json(CONFIGURATION_FILE_PATH)
 	$Control/Menu/SoundButton.pressed = configuration.sound
 	update_sfx(configuration.sound)
 	update_sound_button_text()
@@ -35,7 +34,6 @@ func _on_MenuButton_pressed():
 
 
 func _on_SoundButton_toggled(button_pressed: bool) -> void:
-	print(button_pressed, "BUTTON PRESSED")
 	update_sfx(button_pressed)
 
 
@@ -47,7 +45,7 @@ func update_sfx(value: bool):
 
 func update_sound_configuration(value: bool) -> void:
 	configuration.sound = value
-	update_configuration_file()
+	_configuration_service.update_configuration_file(configuration)
 
 
 func update_sound_button_text() -> void:
@@ -69,30 +67,6 @@ func _on_CloseMenuButton_pressed():
 
 func _on_Menu_popup_hide():
 	get_tree().paused = false
-
-
-func update_configuration_file() -> void:
-	var file = File.new()
-
-	if file.open(CONFIGURATION_FILE_PATH, File.WRITE) != 0:
-		print("Error opening file")
-		return
-
-	file.store_line(to_json(configuration))
-	file.close()
-	pass
-
-
-func get_from_json(filename: String) -> Array:
-	var file = File.new()
-	file.open(filename, File.READ)
-	
-	var text: String = file.get_as_text()
-	var data: Array = parse_json(text)
-	
-	file.close()
-	
-	return data
 
 func _on_RestartLevelButton_pressed():
 	get_tree().call_group(GAME_STATE_GROUP, RESTART_LEVEL_METHOD)
