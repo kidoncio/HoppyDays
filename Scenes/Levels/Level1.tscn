@@ -24,6 +24,7 @@ format = 1
 tile_data = PoolIntArray( -589688, 3, 0, -130922, 2, 0, -130912, 2, 0, 65662, 2, 0, 262140, 2, 0, 262192, 3, 0, 262215, 3, 0, 262288, 3, 0, 393222, 2, 0, 393241, 3, 0, 458794, 3, 0, 458830, 3, 0, 458869, 2, 0, 524305, 3, 0, 524375, 3, 0, 524426, 3, 0, 720891, 2, 0, 655467, 2, 0, 720928, 2, 0, 786563, 3, 0, 852026, 3, 0, 852064, 2, 0, 983062, 3, 0, 983106, 3, 0, 1048666, 3, 0, 1179657, 2, 0, 1179731, 3, 0, 1376304, 2, 0, 1441818, 2, 0, 1441865, 2, 0, 1507365, 2, 0, 1638416, 2, 0 )
 
 [node name="JumpPads" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="JumpPad" parent="JumpPads" instance=ExtResource( 4 )]
 position = Vector2( 1854.21, 1376.82 )
@@ -131,7 +132,6 @@ position = Vector2( 8291.03, -1091.26 )
 position = Vector2( 6195.95, 84.8219 )
 
 [node name="Portal" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Portal" parent="Portal" instance=ExtResource( 9 )]
 position = Vector2( 10444.7, -231.494 )
