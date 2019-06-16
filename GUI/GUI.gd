@@ -14,8 +14,8 @@ const GAME_STATE_GROUP: String = "GameState"
 const RESTART_LEVEL_METHOD: String = "restart_level"
 
 func _ready():
-	$Control/Menu/SoundButton.pressed = configuration.sound
-	update_sfx(configuration.sound)
+	$Control/Menu/SoundButton.pressed = configuration.sound_muted
+	update_sfx(configuration.sound_muted)
 	update_sound_button_text()
 
 
@@ -44,14 +44,14 @@ func update_sfx(value: bool):
 
 
 func update_sound_configuration(value: bool) -> void:
-	configuration.sound = value
+	configuration.sound_muted = value
 	_configuration_service.update_configuration_file(configuration)
 
 
 func update_sound_button_text() -> void:
 	var text: String = "Mute all sounds"
 
-	if (configuration.sound):
+	if (configuration.sound_muted):
 		text = "Desmute all sounds"
 
 	$Control/Menu/SoundButton.text = text
@@ -67,6 +67,7 @@ func _on_CloseMenuButton_pressed():
 
 func _on_Menu_popup_hide():
 	get_tree().paused = false
+
 
 func _on_RestartLevelButton_pressed():
 	get_tree().call_group(GAME_STATE_GROUP, RESTART_LEVEL_METHOD)

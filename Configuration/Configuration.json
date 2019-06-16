@@ -4,5 +4,5 @@
   "level": 1,
   "lives": 3,
   "lives_on_begin_of_level": 3,
-  "sound": true
+  "sound_muted": false
 }

@@ -1,7 +1,7 @@
 extends Node
 
 var configuration: Dictionary = {
-	"sound": true,
+	"sound_muted": false,
 	"level": 1,
 	"coins": 0,
 	"lives": 3,
@@ -19,6 +19,7 @@ func get_configuration():
 
 
 func reset():
+	configuration.sound_muted = false
 	configuration.level = 1
 	configuration.coins = 0
 	configuration.lives = 3
