@@ -79,6 +79,13 @@ func animate() -> void:
 func hurt() -> void:
 	$SFX/Pain.play()
 
+	var jumpIsPressed: bool = false
+
+	if Input.is_action_pressed("jump"):
+		jumpIsPressed = true
+
 	position.y -= 1
 	yield(get_tree(), "idle_frame")
-	motion.y = -JUMP_SPEED
+	
+	if !jumpIsPressed:
+		motion.y = -JUMP_SPEED
