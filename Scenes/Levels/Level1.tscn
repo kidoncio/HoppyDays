@@ -138,5 +138,5 @@ position = Vector2( 10444.7, -231.494 )
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = -30.0
+volume_db = -25.0
 autoplay = true

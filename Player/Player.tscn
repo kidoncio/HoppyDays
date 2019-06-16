@@ -89,9 +89,9 @@ texture = ExtResource( 7 )
 
 [node name="Jump" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 8 )
-volume_db = -8.0
+volume_db = -15.0
 
 [node name="Pain" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 9 )
-volume_db = -5.0
+volume_db = -10.0
 [connection signal="animate" from="." to="PlayerAnimation" method="_on_Player_animate"]
