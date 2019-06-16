@@ -1,10 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://GUI/GUI.gd" type="Script" id=1]
 [ext_resource path="res://GFX/HUD/bannerHanging.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/candles_.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://GFX/HUD/coin_bronze.png" type="Texture" id=4]
 [ext_resource path="res://GFX/HUD/lifes.png" type="Texture" id=5]
+[ext_resource path="res://GFX/HUD/menu.png" type="Texture" id=6]
+[ext_resource path="res://GFX/HUD/sound_off.png" type="Texture" id=7]
+[ext_resource path="res://GFX/HUD/sound.png" type="Texture" id=8]
+[ext_resource path="res://GFX/HUD/restart.png" type="Texture" id=9]
+[ext_resource path="res://GFX/HUD/close.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -21,9 +26,12 @@ script = ExtResource( 1 )
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -1.29071
+margin_top = -2.91971
+margin_right = -1.29071
+margin_bottom = -2.91968
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
-editor/display_folded = true
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -343.708
@@ -84,30 +92,75 @@ valign = 1
 autowrap = true
 
 [node name="MenuButton" type="TextureButton" parent="Control"]
-anchor_left = 0.045
-anchor_top = 0.043
-anchor_right = 0.104
-anchor_bottom = 0.145
-margin_left = 0.172836
-margin_top = 0.0471668
-margin_right = -0.243164
-margin_bottom = -0.15284
-texture_normal = ExtResource( 4 )
+anchor_left = 0.064
+anchor_top = 0.082
+anchor_right = 0.12
+anchor_bottom = 0.168
+margin_left = 0.22419
+margin_top = -0.0419502
+margin_right = 156.88
+margin_bottom = 163.358
+rect_scale = Vector2( 0.265133, 0.241364 )
+texture_normal = ExtResource( 6 )
 
-[node name="QuitDialog" type="ConfirmationDialog" parent="Control"]
-pause_mode = 2
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -100.0
-margin_top = -35.0
-margin_right = 100.0
-margin_bottom = 35.0
-popup_exclusive = true
-window_title = "Quit"
-dialog_text = "Do you really want to quit?"
+[node name="Menu" type="WindowDialog" parent="Control"]
+anchor_left = 0.343
+anchor_top = 0.265
+anchor_right = 0.636
+anchor_bottom = 0.799
+margin_left = -0.283417
+margin_top = 19.7211
+margin_right = -0.31543
+margin_bottom = -0.678864
+window_title = "Menu"
+resizable = true
+
+[node name="SoundButton" type="CheckButton" parent="Control/Menu"]
+anchor_left = 0.039
+anchor_top = 0.179
+anchor_right = 0.969
+anchor_bottom = 0.312
+margin_left = -0.0585203
+margin_top = 0.0165672
+margin_right = -0.0585327
+margin_bottom = 0.11657
+custom_icons/off = ExtResource( 7 )
+custom_icons/on = ExtResource( 8 )
+action_mode = 0
+text = "Mute all sounds"
+flat = true
+align = 1
+
+[node name="RestartLevelButton" type="CheckButton" parent="Control/Menu"]
+anchor_left = 0.043
+anchor_top = 0.417
+anchor_right = 0.97
+anchor_bottom = 0.55
+margin_left = -2.9
+margin_top = -0.100006
+custom_icons/off = ExtResource( 9 )
+custom_icons/on = ExtResource( 9 )
+action_mode = 0
+text = "Restart level"
+flat = true
+align = 1
+
+[node name="QuitGameButton2" type="CheckButton" parent="Control/Menu"]
+anchor_left = 0.043
+anchor_top = 0.417
+anchor_right = 0.97
+anchor_bottom = 0.55
+margin_left = -2.9
+margin_top = 69.9
+margin_right = -1.0
+margin_bottom = 70.0
+custom_icons/off = ExtResource( 10 )
+custom_icons/on = ExtResource( 10 )
+action_mode = 0
+text = "Quit game"
+flat = true
+align = 1
 [connection signal="pressed" from="Control/MenuButton" to="." method="_on_MenuButton_pressed"]
-[connection signal="confirmed" from="Control/QuitDialog" to="." method="_on_QuitDialog_confirmed"]
-[connection signal="modal_closed" from="Control/QuitDialog" to="." method="_on_QuitDialog_modal_closed"]
-[connection signal="mouse_exited" from="Control/QuitDialog" to="." method="_on_QuitDialog_mouse_exited"]
+[connection signal="toggled" from="Control/Menu/SoundButton" to="." method="_on_SoundButton_toggled"]
+[connection signal="pressed" from="Control/Menu/RestartLevelButton" to="." method="_on_RestartLevelButton_pressed"]
+[connection signal="pressed" from="Control/Menu/QuitGameButton2" to="." method="_on_QuitGameButton_pressed"]

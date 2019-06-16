@@ -3,7 +3,8 @@ extends Node2D
 var _lives: int = 3
 var _coins: int = 0
 var _target_number_of_coins: int = 10
-var _level: int = 0
+var _level: int = 1
+const _TOTAL_LEVELS: int = 2
 
 # Groups
 const GAME_STATE_GROUP: String = "GameState"
@@ -16,7 +17,7 @@ const UPDATE_COINS_METHOD: String = "update_coins"
 # Scenes
 const GAME_OVER_SCENE: String = "res://Scenes/GameOver.tscn"
 const VICTORY_SCENE: String = "res://Scenes/Victory.tscn"
-const LEVEL1_SCENE: String = "res://Scenes/Levels/Level1.tscn"
+const LEVEL_SCENE: String = "res://Scenes/Levels/Level%s.tscn"
 
 func _ready():
 	add_to_group(GAME_STATE_GROUP)
@@ -53,6 +54,10 @@ func life_up() -> void:
 	update_GUI()
 
 
+func restart_level() -> void:
+	get_tree().reload_current_scene()
+
+
 func end_game() -> void:
 	yield(get_tree().create_timer(0.3), "timeout")
 	get_tree().change_scene(GAME_OVER_SCENE)
@@ -63,7 +68,13 @@ func win_game() -> void:
 	
 	var scene: String = get_tree().get_current_scene().get_name()
 	
+	_level += 1
+	
 	if scene == "Tutorial":
-		get_tree().change_scene(LEVEL1_SCENE)
+		_level = 1
+		get_tree().change_scene(LEVEL_SCENE % str(_level))
 	else:
-		get_tree().change_scene(VICTORY_SCENE)
+		if _level == _TOTAL_LEVELS:
+			get_tree().change_scene(VICTORY_SCENE)
+		else:
+			get_tree().change_scene(LEVEL_SCENE % str(_level))
