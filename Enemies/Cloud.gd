@@ -12,9 +12,11 @@ func _process(delta):
 
 func fire() -> void:
 	if !timeout:
+		timeout = true
+		yield(get_tree().create_timer(0.2), "timeout")
 		$Sprite/RayCast2D.add_child(load(LIGHTNING_SCENE).instance())
 		$Sprite/Timer.start()
-		timeout = true
+
 
 func _on_Timer_timeout():
 	timeout = false
