@@ -58,7 +58,17 @@ func move() -> void:
 
 func boost() -> void:
 	position.y -= 1
+	
+	var jumpIsPressed: bool = false
+
+	if Input.is_action_pressed("jump"):
+		jumpIsPressed = true
+
 	yield(get_tree(), "idle_frame")
+	
+	if jumpIsPressed:
+		motion.y += JUMP_SPEED
+	
 	motion.y -= JUMP_SPEED * BOOST_MULTIPLIER
 
 
@@ -68,7 +78,7 @@ func animate() -> void:
 
 func hurt() -> void:
 	$SFX/Pain.play()
-	
+
 	position.y -= 1
 	yield(get_tree(), "idle_frame")
 	motion.y = -JUMP_SPEED
