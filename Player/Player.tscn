@@ -15,7 +15,6 @@ radius = 60.0
 height = 86.0
 
 [node name="Player" type="KinematicBody2D"]
-editor/display_folded = true
 position = Vector2( 481.878, 256.318 )
 collision_mask = 14
 script = ExtResource( 1 )
@@ -30,6 +29,7 @@ shape = SubResource( 1 )
 [node name="PlayerAnimation" parent="." instance=ExtResource( 2 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+editor/display_folded = true
 position = Vector2( 100, 0 )
 current = true
 zoom = Vector2( 2, 2 )
@@ -86,7 +86,6 @@ margin_bottom = 40.0
 texture = ExtResource( 7 )
 
 [node name="SFX" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Jump" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 8 )
