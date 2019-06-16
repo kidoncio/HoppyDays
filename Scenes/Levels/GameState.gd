@@ -4,7 +4,6 @@ var _lives: int = 3
 var _coins: int = 0
 var _target_number_of_coins: int = 10
 var _level: int = 1
-const _TOTAL_LEVELS: int = 2
 
 # Groups
 const GAME_STATE_GROUP: String = "GameState"
@@ -74,7 +73,9 @@ func win_game() -> void:
 		_level = 1
 		get_tree().change_scene(LEVEL_SCENE % str(_level))
 	else:
-		if _level == _TOTAL_LEVELS:
-			get_tree().change_scene(VICTORY_SCENE)
+		var scene_path: String = LEVEL_SCENE % str(_level)
+		
+		if has_node(scene_path):
+			get_tree().change_scene(scene_path)
 		else:
-			get_tree().change_scene(LEVEL_SCENE % str(_level))
+			get_tree().change_scene(VICTORY_SCENE)
