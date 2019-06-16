@@ -17,6 +17,7 @@ const UPDATE_COINS_METHOD: String = "update_coins"
 const GAME_OVER_SCENE: String = "res://Scenes/GameOver.tscn"
 const VICTORY_SCENE: String = "res://Scenes/Victory.tscn"
 const LEVEL_SCENE: String = "res://Scenes/Levels/Level%s.tscn"
+const TUTORIAL_SCENE_NAME: String = "Tutorial"
 
 func _ready():
 	add_to_group(GAME_STATE_GROUP)
@@ -69,7 +70,7 @@ func win_game() -> void:
 	
 	_level += 1
 	
-	if scene == "Tutorial":
+	if scene == TUTORIAL_SCENE_NAME:
 		_level = 1
 		get_tree().change_scene(LEVEL_SCENE % str(_level))
 	else:
