@@ -23,21 +23,21 @@ format = 1
 tile_data = PoolIntArray( -262055, 7, 0, -262041, 7, 0, 262220, 6, 0, 262257, 6, 0, 393221, 6, 0, 393230, 6, 0, 393378, 6, 0, 393391, 6, 0, 589847, 7, 0, 590030, 6, 0, 655424, 7, 0, 720985, 7, 0, 720999, 7, 0, 786578, 6, 0, 851997, 7, 0, 852091, 6, 0, 1048615, 7, 0, 1048629, 7, 0, 1048771, 6, 0, 1114282, 7, 0, 1376391, 6, 0, 1376439, 6, 0, 1835055, 6, 0 )
 
 [node name="Hazards" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="SpikeTop" parent="Hazards" instance=ExtResource( 4 )]
-position = Vector2( 7426.47, 228.566 )
+position = Vector2( 7427.45, 235.393 )
 
 [node name="SpikeTop2" parent="Hazards" instance=ExtResource( 4 )]
-position = Vector2( 8062.16, 804.857 )
+position = Vector2( 8062.16, 811.174 )
 
 [node name="SpikeTop3" parent="Hazards" instance=ExtResource( 4 )]
-position = Vector2( 10559.2, 357.594 )
+position = Vector2( 10559.2, 362.237 )
 
 [node name="SpikeTop4" parent="Hazards" instance=ExtResource( 4 )]
-position = Vector2( 12678.6, 996.007 )
+position = Vector2( 12678.6, 1002.62 )
 
 [node name="JumpPads" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="JumpPad" parent="JumpPads" instance=ExtResource( 5 )]
 position = Vector2( 3167.94, 1756.92 )
@@ -46,10 +46,8 @@ position = Vector2( 3167.94, 1756.92 )
 position = Vector2( 8752.29, 1317.43 )
 
 [node name="Enemies" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Spikemans" type="Node" parent="Enemies"]
-editor/display_folded = true
 
 [node name="Spikeman" parent="Enemies/Spikemans" instance=ExtResource( 6 )]
 position = Vector2( 5068.96, 177.873 )
@@ -58,10 +56,10 @@ position = Vector2( 5068.96, 177.873 )
 position = Vector2( 8845.74, 1265.01 )
 
 [node name="Spikeman3" parent="Enemies/Spikemans" instance=ExtResource( 6 )]
-position = Vector2( 11403.8, 306.491 )
+position = Vector2( 11399.6, 311.587 )
 
 [node name="Spikeman4" parent="Enemies/Spikemans" instance=ExtResource( 6 )]
-position = Vector2( 11908, 1266.45 )
+position = Vector2( 11890.9, 1271.3 )
 
 [node name="Clouds" type="Node" parent="Enemies"]
 editor/display_folded = true
@@ -85,6 +83,7 @@ position = Vector2( 10043.8, -59.5237 )
 position = Vector2( 12268.7, 523.675 )
 
 [node name="Coins" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Coin" parent="Coins" instance=ExtResource( 8 )]
 position = Vector2( 1953.43, 743.984 )
@@ -138,10 +137,9 @@ position = Vector2( 11034.8, 569.264 )
 position = Vector2( 10411.9, 275.011 )
 
 [node name="Portal" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Portal" parent="Portal" instance=ExtResource( 9 )]
-position = Vector2( 13402.9, 463.624 )
+position = Vector2( 13347.1, 483.672 )
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
