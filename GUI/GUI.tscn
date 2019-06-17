@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://GUI/GUI.gd" type="Script" id=1]
 [ext_resource path="res://GFX/HUD/bannerHanging.png" type="Texture" id=2]
@@ -15,6 +15,13 @@
 size = 50
 outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+outline_size = 4
+use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 3 )
 
@@ -81,12 +88,11 @@ texture = ExtResource( 5 )
 [node name="LifeCount" type="Label" parent="Control/TextureRect/HBoxContainer"]
 margin_left = 201.0
 margin_right = 268.0
-margin_bottom = 131.0
+margin_bottom = 64.0
 size_flags_horizontal = 7
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 1 )
-text = "0
-"
+text = "3"
 align = 1
 valign = 1
 autowrap = true
@@ -104,6 +110,7 @@ rect_scale = Vector2( 0.265133, 0.241364 )
 texture_normal = ExtResource( 6 )
 
 [node name="Menu" type="WindowDialog" parent="Control"]
+editor/display_folded = true
 anchor_left = 0.343
 anchor_top = 0.265
 anchor_right = 0.636
@@ -160,7 +167,45 @@ action_mode = 0
 text = "Quit game"
 flat = true
 align = 1
+
+[node name="LifeFeedback" type="Node" parent="Control"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/LifeFeedback"]
+anchor_left = 0.4
+anchor_top = 0.073
+anchor_right = 0.55
+anchor_bottom = 0.191
+margin_left = 0.399994
+margin_top = -0.800003
+margin_right = -0.200012
+margin_bottom = -0.600006
+alignment = 1
+
+[node name="LifeFeedbackIcon" type="TextureRect" parent="Control/LifeFeedback/HBoxContainer"]
+margin_left = 34.0
+margin_right = 86.0
+margin_bottom = 71.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 5 )
+
+[node name="LifeFeedbackLabel" type="Label" parent="Control/LifeFeedback/HBoxContainer"]
+margin_left = 90.0
+margin_top = 9.0
+margin_right = 119.0
+margin_bottom = 61.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "3"
+align = 1
+valign = 1
+
+[node name="LifeFeedbackTimer" type="Timer" parent="Control/LifeFeedback"]
+wait_time = 2.0
+one_shot = true
 [connection signal="pressed" from="Control/MenuButton" to="." method="_on_MenuButton_pressed"]
 [connection signal="toggled" from="Control/Menu/SoundButton" to="." method="_on_SoundButton_toggled"]
 [connection signal="pressed" from="Control/Menu/RestartLevelButton" to="." method="_on_RestartLevelButton_pressed"]
 [connection signal="pressed" from="Control/Menu/QuitGameButton2" to="." method="_on_QuitGameButton_pressed"]
+[connection signal="timeout" from="Control/LifeFeedback/LifeFeedbackTimer" to="." method="_on_LifeFeedbackTimer_timeout"]
