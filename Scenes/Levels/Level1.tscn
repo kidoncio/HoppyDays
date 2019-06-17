@@ -21,16 +21,12 @@ tile_set = ExtResource( 3 )
 cell_half_offset = 0
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -589688, 3, 0, -130922, 2, 0, -130912, 2, 0, 65662, 2, 0, 262140, 2, 0, 262192, 3, 0, 262215, 3, 0, 262288, 3, 0, 393222, 2, 0, 393241, 3, 0, 458794, 3, 0, 458830, 3, 0, 458869, 2, 0, 524305, 3, 0, 524375, 3, 0, 524426, 3, 0, 720891, 2, 0, 655467, 2, 0, 720928, 2, 0, 786563, 3, 0, 852026, 3, 0, 852064, 2, 0, 983062, 3, 0, 983106, 3, 0, 1048666, 3, 0, 1179657, 2, 0, 1179731, 3, 0, 1376304, 2, 0, 1441818, 2, 0, 1441865, 2, 0, 1507365, 2, 0, 1638416, 2, 0 )
+tile_data = PoolIntArray( -130922, 2, 0, -130912, 2, 0, 262140, 2, 0, 262192, 3, 0, 262215, 3, 0, 262288, 3, 0, 393221, 2, 0, 393241, 3, 0, 458794, 3, 0, 458830, 3, 0, 458869, 2, 0, 524305, 3, 0, 524375, 3, 0, 524426, 3, 0, 720891, 2, 0, 655467, 2, 0, 720928, 2, 0, 786563, 3, 0, 852026, 3, 0, 852064, 2, 0, 983062, 3, 0, 983106, 3, 0, 1048666, 3, 0, 1179657, 2, 0, 1179731, 3, 0, 1376304, 2, 0, 1441818, 2, 0, 1441865, 2, 0, 1507365, 2, 0, 1638416, 2, 0 )
 
 [node name="JumpPads" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="JumpPad" parent="JumpPads" instance=ExtResource( 4 )]
 position = Vector2( 1854.21, 1376.82 )
-
-[node name="JumpPad3" parent="JumpPads" instance=ExtResource( 4 )]
-position = Vector2( 8279.12, 40.233 )
 
 [node name="JumpPad2" parent="JumpPads" instance=ExtResource( 4 )]
 position = Vector2( 3269.24, 1317.36 )
@@ -54,7 +50,6 @@ position = Vector2( 2588.36, 1445.71 )
 position = Vector2( 1542.1, 933.802 )
 
 [node name="Coins" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Coin" parent="Coins" instance=ExtResource( 6 )]
 position = Vector2( 1909.37, 1018.6 )
@@ -96,13 +91,15 @@ position = Vector2( 7037.76, 593.113 )
 position = Vector2( 7162.71, 593.035 )
 
 [node name="Coin14" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 8832.42, -625.092 )
+position = Vector2( 9329.89, 156.983 )
+
+[node name="Coin16" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( 8471.07, 672.276 )
 
 [node name="Coin15" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 8449.14, -416.378 )
+position = Vector2( 8939.43, 396.789 )
 
 [node name="Enemies" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Spikemans" type="Node" parent="Enemies"]
 editor/display_folded = true
@@ -113,8 +110,10 @@ position = Vector2( 4837.09, 1327.47 )
 [node name="Spikeman2" parent="Enemies/Spikemans" instance=ExtResource( 7 )]
 position = Vector2( 7708.57, 368.449 )
 
+[node name="Spikeman3" parent="Enemies/Spikemans" instance=ExtResource( 7 )]
+position = Vector2( 9784.13, -207.113 )
+
 [node name="Clouds" type="Node" parent="Enemies"]
-editor/display_folded = true
 
 [node name="Cloud" parent="Enemies/Clouds" instance=ExtResource( 8 )]
 position = Vector2( 2089.83, -84.2595 )
@@ -126,7 +125,7 @@ position = Vector2( 4993.83, 778.553 )
 position = Vector2( 2768.89, 870.427 )
 
 [node name="Cloud4" parent="Enemies/Clouds" instance=ExtResource( 8 )]
-position = Vector2( 8291.03, -1091.26 )
+position = Vector2( 8932.15, -212.799 )
 
 [node name="Cloud5" parent="Enemies/Clouds" instance=ExtResource( 8 )]
 position = Vector2( 6195.95, 84.8219 )
