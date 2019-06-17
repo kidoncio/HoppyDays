@@ -3,9 +3,9 @@ extends KinematicBody2D
 var motion: Vector2 = Vector2(0, 0)
 
 const UP: Vector2 = Vector2(0, -1)
-const SPEED: int = 1500
-const GRAVITY: int = 150
-const JUMP_SPEED: int = 3000
+const SPEED: int = 1000
+const GRAVITY: int = 130
+const JUMP_SPEED: int = 2500
 
 const BOOST_MULTIPLIER: float = 1.5
 const WORLD_LIMIT: int = 5000
