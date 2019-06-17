@@ -12,7 +12,6 @@
 [node name="PlatformTiles" type="Node2D"]
 
 [node name="ground_cake" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 260.281, 459.788 )
 texture = ExtResource( 1 )
 __meta__ = {
@@ -22,11 +21,9 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="ground_cake"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground_cake/StaticBody2D"]
-visible = false
-polygon = PoolVector2Array( -176.616, -46.7575, 174.389, -46.7575, 180.2, -44.8204, 188.142, -38.0405, 190.467, -20.4127, 190.661, -13.6328, 162.379, 32.6642, 157.149, 36.151, -159.182, 46.9989, -164.025, 42.5435, -189.401, -13.6328, -190.564, -19.2504, -189.401, -35.1348, -185.914, -42.1084 )
+polygon = PoolVector2Array( -176.616, -46.7575, 174.389, -46.7575, 184.216, -46.5526, 192.139, -45.2322, 193.899, -19.7047, 190.661, -13.6328, 162.379, 32.6642, 157.149, 36.151, -159.182, 46.9989, -164.025, 42.5435, -189.401, -13.6328, -190.564, -19.2504, -191.653, -35.5493, -189.452, -46.1125 )
 
 [node name="ground_cake_small" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 623.691, 462.243 )
 texture = ExtResource( 2 )
 __meta__ = {
@@ -34,13 +31,11 @@ __meta__ = {
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground_cake_small"]
-editor/display_folded = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground_cake_small/StaticBody2D"]
-polygon = PoolVector2Array( -99.1776, -16.8417, -81.5773, 34.0276, -76.4259, 40.2522, 69.0991, 49.4816, 75.9676, 48.1938, 100.436, -15.9832, 100.436, -36.1592, 97.0022, -43.8862, 90.563, -48.6083, 83.0507, -50.3254, -85.4408, -49.6815, -92.9531, -46.4619, -98.3191, -40.452, -99.6069, -29.9347 )
+polygon = PoolVector2Array( -99.1776, -16.8417, -81.5773, 34.0276, -76.4259, 40.2522, 69.0991, 49.4816, 75.9676, 48.1938, 104.727, -12.7149, 104.727, -36.5479, 103.89, -48.6734, 90.4367, -50.0829, 83.0507, -50.3254, -85.4408, -49.6815, -95.8199, -49.3319, -100.045, -44.3167, -101.763, -29.6847 )
 
 [node name="ground_grass" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 206.26, 339.469 )
 texture = ExtResource( 3 )
 __meta__ = {
@@ -50,11 +45,9 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="ground_grass"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground_grass/StaticBody2D"]
-visible = false
-polygon = PoolVector2Array( -176.616, -46.7575, 174.389, -46.7575, 180.2, -44.8204, 188.142, -38.0405, 190.467, -20.4127, 190.661, -13.6328, 162.379, 32.6642, 157.149, 36.151, -159.182, 46.9989, -164.025, 42.5435, -189.401, -13.6328, -190.564, -19.2504, -189.401, -35.1348, -185.914, -42.1084 )
+polygon = PoolVector2Array( -190.053, -32.1115, -189.676, -11.7343, -160.619, 47.8878, 159.377, 35.8124, 189.667, -15.0945, 190.698, -38.9038, 190.919, -47.3889, -189.036, -47.2083 )
 
 [node name="ground_grass_small" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 626.146, 334.559 )
 texture = ExtResource( 4 )
 __meta__ = {
@@ -64,10 +57,9 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="ground_grass_small"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground_grass_small/StaticBody2D"]
-polygon = PoolVector2Array( -99.1776, -16.8417, -81.5773, 34.0276, -76.4259, 40.2522, 69.0991, 49.4816, 75.9676, 48.1938, 100.436, -15.9832, 100.436, -36.1592, 97.0022, -43.8862, 90.563, -48.6083, 83.0507, -50.3254, -85.4408, -49.6815, -92.9531, -46.4619, -98.3191, -40.452, -99.6069, -29.9347 )
+polygon = PoolVector2Array( -99.1776, -16.8417, -81.5773, 34.0276, -76.4259, 40.2522, 69.0991, 49.4816, 75.9676, 48.1938, 101.175, -15.4773, 101.175, -35.3596, 101.118, -50.2575, 91.2347, -50.3171, 83.0507, -50.3254, -85.5787, -49.9334, -97.3478, -49.7982, -99.4562, -40.1043, -99.6069, -29.9347 )
 
 [node name="ground_sand" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 256.597, 192.141 )
 texture = ExtResource( 5 )
 __meta__ = {
@@ -94,7 +86,6 @@ __meta__ = {
 polygon = PoolVector2Array( -99.1776, -16.8417, -81.5773, 34.0276, -76.4259, 40.2522, 69.0991, 49.4816, 75.9676, 48.1938, 100.436, -15.9832, 100.436, -36.1592, 97.0022, -43.8862, 90.563, -48.6083, 83.0507, -50.3254, -85.4408, -49.6815, -92.9531, -46.4619, -98.3191, -40.452, -99.6069, -29.9347 )
 
 [node name="ground_snow" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 235.726, 58.3175 )
 texture = ExtResource( 7 )
 __meta__ = {
@@ -104,11 +95,9 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="ground_snow"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground_snow/StaticBody2D"]
-visible = false
-polygon = PoolVector2Array( -176.616, -46.7575, 174.389, -46.7575, 180.2, -44.8204, 188.142, -38.0405, 190.467, -20.4127, 190.661, -13.6328, 162.379, 32.6642, 157.149, 36.151, -159.182, 46.9989, -164.025, 42.5435, -189.401, -13.6328, -190.564, -19.2504, -189.401, -35.1348, -185.914, -42.1084 )
+polygon = PoolVector2Array( -176.92, -46.9121, 174.671, -47.026, 181.455, -47.026, 191.397, -46.9121, 191.08, -20.2034, 190.661, -13.6328, 162.379, 32.6642, 157.149, 36.151, -159.182, 46.9989, -164.025, 42.5435, -190.671, -13.8844, -192.084, -20.1815, -194.654, -36.2456, -190.671, -46.398 )
 
 [node name="ground_snow_small" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 615.097, 54.6343 )
 texture = ExtResource( 8 )
 __meta__ = {
@@ -118,4 +107,4 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="ground_snow_small"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground_snow_small/StaticBody2D"]
-polygon = PoolVector2Array( -99.1776, -16.8417, -81.5773, 34.0276, -76.4259, 40.2522, 69.0991, 49.4816, 75.9676, 48.1938, 100.436, -15.9832, 100.436, -36.1592, 97.0022, -43.8862, 90.563, -48.6083, 83.0507, -50.3254, -85.4408, -49.6815, -92.9531, -46.4619, -98.3191, -40.452, -99.6069, -29.9347 )
+polygon = PoolVector2Array( -99.4885, -17.0917, -81.5773, 34.0276, -76.4259, 40.2522, 69.0991, 49.4816, 75.9676, 48.1938, 100.436, -15.9832, 101.463, -35.9, 102.166, -50.2164, -97.4863, -49.9901, -99.062, -41.3196, -100.635, -29.7811 )
