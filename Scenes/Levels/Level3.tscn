@@ -1,0 +1,183 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/Levels/GameState.gd" type="Script" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Levels/Tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://Items/Coin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Hazards/SpikeTop.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Items/JumpPad.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Enemies/Cloud.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Enemies/Spikeman.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Items/Portal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://SFX/Chiptune_Adventures_1.ogg" type="AudioStream" id=10]
+
+[node name="Level3" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( -131044, 0, 0, 131173, 0, 0, 131187, 0, 0, 131202, 0, 0, 196625, 0, 0, 196675, 1, 0, 393221, 0, 0, 393368, 0, 0, 524378, 1, 0, 589863, 0, 0, 589880, 1, 0, 655527, 1, 0, 786650, 0, 0, 786666, 0, 0, 786680, 0, 0, 917581, 1, 0, 983145, 0, 0, 983160, 0, 0, 1048755, 1, 0, 1048850, 0, 0, 1048867, 1, 0, 1245321, 0, 0, 1376516, 0, 0, 1441983, 1, 0, 1835212, 0, 0 )
+
+[node name="Coins" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Coin" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 1848.12, -191.006 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 1978.64, -189.058 )
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 2115, -187.11 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 3687.19, 522.548 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 4392.94, 126.436 )
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 5042.9, 812.658 )
+
+[node name="Coin7" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 4900.64, 433.283 )
+
+[node name="Coin8" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 4722.11, 168.279 )
+
+[node name="Coin9" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 4989.9, 622.97 )
+
+[node name="Coin10" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 5849.07, 413.756 )
+
+[node name="Coin11" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 6764.76, 38.8311 )
+
+[node name="Coin12" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 7045.95, 886.018 )
+
+[node name="Coin13" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 8048.15, -130.606 )
+
+[node name="Coin14" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 9778.58, 294.79 )
+
+[node name="Coin15" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 9904.75, 291.185 )
+
+[node name="Coin16" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 10034.5, 291.185 )
+
+[node name="Coin17" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 11552.3, 940.094 )
+
+[node name="Coin18" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 12309.3, 1311.41 )
+
+[node name="Coin19" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 14252.4, 709.371 )
+
+[node name="Coin20" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 14032.5, 709.371 )
+
+[node name="Coin21" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 16175.7, 689.754 )
+
+[node name="Coin22" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 16945.6, 1268.45 )
+
+[node name="Harzards" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="SpikeTop" parent="Harzards" instance=ExtResource( 5 )]
+position = Vector2( 1275.27, 166.12 )
+
+[node name="SpikeTop2" parent="Harzards" instance=ExtResource( 5 )]
+position = Vector2( 6644.56, 101.544 )
+
+[node name="SpikeTop3" parent="Harzards" instance=ExtResource( 5 )]
+position = Vector2( 6917.06, 934.881 )
+
+[node name="SpikeTop4" parent="Harzards" instance=ExtResource( 5 )]
+position = Vector2( 16075.1, 741.32 )
+
+[node name="SpikeTop5" parent="Harzards" instance=ExtResource( 5 )]
+position = Vector2( 16827.1, 1317.5 )
+
+[node name="JumpPads" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="JumpPad" parent="JumpPads" instance=ExtResource( 6 )]
+position = Vector2( 8969.66, 1179.96 )
+
+[node name="JumpPad2" parent="JumpPads" instance=ExtResource( 6 )]
+position = Vector2( 13241.3, 1757.95 )
+
+[node name="Enemies" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Clouds" type="Node" parent="Enemies"]
+
+[node name="Cloud" parent="Enemies/Clouds" instance=ExtResource( 7 )]
+position = Vector2( 3691.78, -260.695 )
+
+[node name="Cloud2" parent="Enemies/Clouds" instance=ExtResource( 7 )]
+position = Vector2( 4403.84, -647.562 )
+
+[node name="Cloud3" parent="Enemies/Clouds" instance=ExtResource( 7 )]
+position = Vector2( 5540.88, -137.267 )
+
+[node name="Cloud4" parent="Enemies/Clouds" instance=ExtResource( 7 )]
+position = Vector2( 9361.01, -328.273 )
+
+[node name="Cloud5" parent="Enemies/Clouds" instance=ExtResource( 7 )]
+position = Vector2( 11565.3, 182.798 )
+
+[node name="Cloud6" parent="Enemies/Clouds" instance=ExtResource( 7 )]
+position = Vector2( 13248.3, 931.337 )
+
+[node name="Cloud7" parent="Enemies/Clouds" instance=ExtResource( 7 )]
+position = Vector2( 16077.2, -59.8317 )
+
+[node name="Cloud8" parent="Enemies/Clouds" instance=ExtResource( 7 )]
+position = Vector2( 17708.5, 198.285 )
+
+[node name="Spikemans" type="Node" parent="Enemies"]
+editor/display_folded = true
+
+[node name="Spikeman" parent="Enemies/Spikemans" instance=ExtResource( 8 )]
+position = Vector2( 2691.99, 500.419 )
+
+[node name="Spikeman2" parent="Enemies/Spikemans" instance=ExtResource( 8 )]
+position = Vector2( 7866.06, 882.491 )
+
+[node name="Spikeman3" parent="Enemies/Spikemans" instance=ExtResource( 8 )]
+position = Vector2( 7556.71, 50.1357 )
+
+[node name="Spikeman4" parent="Enemies/Spikemans" instance=ExtResource( 8 )]
+position = Vector2( 8507.02, 49.9239 )
+
+[node name="Spikeman5" parent="Enemies/Spikemans" instance=ExtResource( 8 )]
+position = Vector2( 14141.4, 690.37 )
+
+[node name="Spikeman6" parent="Enemies/Spikemans" instance=ExtResource( 8 )]
+position = Vector2( 15161.2, 690.058 )
+
+[node name="Spikeman7" parent="Enemies/Spikemans" instance=ExtResource( 8 )]
+position = Vector2( 17715.2, 945.567 )
+
+[node name="Portal" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Portal" parent="Portal" instance=ExtResource( 9 )]
+position = Vector2( 18721.3, 922.454 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -25.0
+autoplay = true
