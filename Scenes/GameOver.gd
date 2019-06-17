@@ -14,6 +14,11 @@ const LEVEL_SCENE: String = "res://Scenes/Levels/Level%s.tscn"
 # Methods
 const RESTART_LEVEL_METHOD: String = "restart_level"
 
+func _process(delta):
+	if Input.is_action_pressed("jump") || Input.is_action_pressed("ui_accept"):
+		_on_RestartButton_pressed()
+
+
 func _on_RestartButton_pressed():
 	get_tree().change_scene(LEVEL_SCENE % str(configuration.level))
 	pass
