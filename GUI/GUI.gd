@@ -14,7 +14,6 @@ const GAME_STATE_GROUP: String = "GameState"
 const RESTART_LEVEL_METHOD: String = "restart_level"
 
 func _ready():
-	hide_life_feedback()
 	$Control/Menu/SoundButton.pressed = configuration.sound_muted
 	update_sfx(configuration.sound_muted)
 	update_sound_button_text()
