@@ -2,17 +2,11 @@ extends Control
 
 # Configuration Service
 onready var _configuration_service = preload("res://Scenes/ConfigurationService.gd").new()
-onready var configuration: Dictionary = _configuration_service.get_configuration()
-
-# Groups
-const GAME_STATE_GROUP: String = "GameState"
+onready var configuration: Dictionary;
 
 # Scenes
 const MENU_SCENE: String = "res://Scenes/Menu.tscn"
 const LEVEL_SCENE: String = "res://Scenes/Levels/Level%s.tscn"
-
-# Methods
-const RESTART_LEVEL_METHOD: String = "restart_level"
 
 func _process(delta):
 	if Input.is_action_pressed("jump") || Input.is_action_pressed("ui_accept"):
@@ -20,6 +14,7 @@ func _process(delta):
 
 
 func _on_RestartButton_pressed():
+	configuration = _configuration_service.get_configuration()
 	get_tree().change_scene(LEVEL_SCENE % str(configuration.level))
 	pass
 
