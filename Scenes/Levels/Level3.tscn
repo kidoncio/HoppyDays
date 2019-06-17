@@ -20,10 +20,9 @@ script = ExtResource( 1 )
 tile_set = ExtResource( 3 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -131044, 0, 0, 131173, 0, 0, 131187, 0, 0, 131202, 0, 0, 196625, 0, 0, 196675, 1, 0, 393221, 0, 0, 393368, 0, 0, 524378, 1, 0, 589863, 0, 0, 589880, 1, 0, 655527, 1, 0, 786650, 0, 0, 786666, 0, 0, 786680, 0, 0, 917581, 1, 0, 983145, 0, 0, 983160, 0, 0, 1048755, 1, 0, 1048850, 0, 0, 1048867, 1, 0, 1245321, 0, 0, 1376516, 0, 0, 1441983, 1, 0, 1835212, 0, 0 )
+tile_data = PoolIntArray( -131044, 0, 0, 131173, 0, 0, 131187, 0, 0, 131202, 0, 0, 196625, 0, 0, 196675, 1, 0, 262237, 1, 0, 327740, 1, 0, 393221, 0, 0, 393368, 0, 0, 524373, 1, 0, 589863, 0, 0, 589877, 1, 0, 655506, 1, 0, 786598, 0, 0, 786650, 0, 0, 786663, 0, 0, 786680, 0, 0, 917581, 1, 0, 983145, 0, 0, 983160, 0, 0, 1048755, 1, 0, 1048818, 1, 0, 1048867, 1, 0, 1114325, 1, 0, 1114383, 0, 0, 1114394, 1, 0, 1245321, 0, 0, 1376516, 0, 0, 1441983, 1, 0, 1835212, 0, 0 )
 
 [node name="Coins" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Coin" parent="Coins" instance=ExtResource( 4 )]
 position = Vector2( 1848.12, -191.006 )
@@ -35,7 +34,7 @@ position = Vector2( 1978.64, -189.058 )
 position = Vector2( 2115, -187.11 )
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 4 )]
-position = Vector2( 3687.19, 522.548 )
+position = Vector2( 3498.61, 520.276 )
 
 [node name="Coin5" parent="Coins" instance=ExtResource( 4 )]
 position = Vector2( 4392.94, 126.436 )
@@ -53,7 +52,7 @@ position = Vector2( 4722.11, 168.279 )
 position = Vector2( 4989.9, 622.97 )
 
 [node name="Coin10" parent="Coins" instance=ExtResource( 4 )]
-position = Vector2( 5849.07, 413.756 )
+position = Vector2( 5544.61, 425.116 )
 
 [node name="Coin11" parent="Coins" instance=ExtResource( 4 )]
 position = Vector2( 6764.76, 38.8311 )
@@ -91,6 +90,12 @@ position = Vector2( 16175.7, 689.754 )
 [node name="Coin22" parent="Coins" instance=ExtResource( 4 )]
 position = Vector2( 16945.6, 1268.45 )
 
+[node name="Coin23" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 6785.47, 892.134 )
+
+[node name="Coin24" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 8959.89, 975.619 )
+
 [node name="Harzards" type="Node" parent="."]
 editor/display_folded = true
 
@@ -119,7 +124,6 @@ position = Vector2( 8969.66, 1179.96 )
 position = Vector2( 13241.3, 1757.95 )
 
 [node name="Enemies" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Clouds" type="Node" parent="Enemies"]
 
@@ -133,7 +137,7 @@ position = Vector2( 4403.84, -647.562 )
 position = Vector2( 5540.88, -137.267 )
 
 [node name="Cloud4" parent="Enemies/Clouds" instance=ExtResource( 7 )]
-position = Vector2( 9361.01, -328.273 )
+position = Vector2( 9444.7, -194.376 )
 
 [node name="Cloud5" parent="Enemies/Clouds" instance=ExtResource( 7 )]
 position = Vector2( 11565.3, 182.798 )
@@ -145,10 +149,12 @@ position = Vector2( 13248.3, 931.337 )
 position = Vector2( 16077.2, -59.8317 )
 
 [node name="Cloud8" parent="Enemies/Clouds" instance=ExtResource( 7 )]
-position = Vector2( 17708.5, 198.285 )
+position = Vector2( 17007.7, 505.123 )
+
+[node name="Cloud9" parent="Enemies/Clouds" instance=ExtResource( 7 )]
+position = Vector2( 7558.19, -599.441 )
 
 [node name="Spikemans" type="Node" parent="Enemies"]
-editor/display_folded = true
 
 [node name="Spikeman" parent="Enemies/Spikemans" instance=ExtResource( 8 )]
 position = Vector2( 2691.99, 500.419 )
@@ -166,10 +172,10 @@ position = Vector2( 8507.02, 49.9239 )
 position = Vector2( 14141.4, 690.37 )
 
 [node name="Spikeman6" parent="Enemies/Spikemans" instance=ExtResource( 8 )]
-position = Vector2( 15161.2, 690.058 )
+position = Vector2( 14981, 690.058 )
 
 [node name="Spikeman7" parent="Enemies/Spikemans" instance=ExtResource( 8 )]
-position = Vector2( 17715.2, 945.567 )
+position = Vector2( 17545.2, 1010.49 )
 
 [node name="Portal" type="Node" parent="."]
 editor/display_folded = true
